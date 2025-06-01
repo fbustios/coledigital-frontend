@@ -1,35 +1,59 @@
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Login(){
+function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
+        try {
             const res = await fetch('http://localhost:8080/login/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({username, password})
-            })
+                body: JSON.stringify({ username, password }),
+            });
 
-            if(!res.ok){
+            if (!res.ok) {
                 throw new Error(res.statusText);
             }
 
             const data = await res.json();
-            localStorage.setItem('token',data.token);
+            localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
 
             navigate('/dashboard');
-        }catch(err){
-            console.log(err);
+        } catch (err) {
+            console.error('Error en login:', err);
+            alert('Login fallido');
         }
-    }
+    };
+
     return (
-        <div>perro</div>
-    )
+        <div>
+            <h1>Iniciar Sesión</h1>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Usuario"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                />
+                <br />
+                <input
+                    type="password"
+                    placeholder="Contraseña"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+                <br />
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    );
 }
+
 export default Login;
