@@ -25,7 +25,8 @@ function Login() {
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
 
-            navigate('/dashboard');
+            if(data.user.rol === 'Director') navigate('/adminPage');
+            else navigate('/Dashboard');
         } catch (err) {
             console.error('Error en login:', err);
             alert('Login fallido');

@@ -1,5 +1,5 @@
 import {Navigate} from 'react-router-dom'
-import App from "../App";
+
 
 function ProtectedRoute({children,allowedRoles}) {
     const token = localStorage.getItem('token');
