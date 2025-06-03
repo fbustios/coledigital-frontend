@@ -16,7 +16,9 @@ function Login() {
             });
 
             if (!res.ok) {
+                console.log('xd');
                 throw new Error(res.statusText);
+
             }
 
             const data = await res.json();
