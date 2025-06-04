@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/loginStyle.css'
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -34,27 +35,29 @@ function Login() {
     };
 
     return (
-        <div>
-            <h1>Iniciar Sesión</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Usuario"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-                <br />
-                <input
-                    type="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <br />
-                <button type="submit">Ingresar</button>
-            </form>
+        <div className="login-container">
+            <div className="login-card">
+                <h1 className="login-title">Iniciar Sesión</h1>
+                <form onSubmit={handleSubmit} className="login-form">
+                    <input
+                        type="text"
+                        placeholder="Usuario"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                        className="login-input"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Contraseña"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        className="login-input"
+                    />
+                    <button type="submit" className="login-button">Ingresar</button>
+                </form>
+            </div>
         </div>
     );
 }

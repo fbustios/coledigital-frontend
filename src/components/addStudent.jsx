@@ -56,6 +56,7 @@ function AddStudent(){
                     />
                 <br/>
                 <input
+                    type='number'
                     value={telefono}
                     placeholder='Telefono del estudiante'
                     onChange={(e)=>{setTefono(e.target.value)}}

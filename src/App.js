@@ -9,9 +9,9 @@ function App() {
   return (
       <Router>
         <Routes>
-          <Route path= '/login' element={<Login/>}></Route>
-          <Route path='/adminPage' element={protectedRoute({children : <AdminPage/>, allowedRoles: ['Director']})}></Route>
-          <Route path='/adminPage/addEstudent' element={protectedRoute({children: <AddStudent/>, allowedRoles: ['Director']})}></Route>
+            <Route path= '/login' element={<Login/>}></Route>
+            <Route path='/adminPage' element={protectedRoute({children : <AdminPage/>, allowedRoles: ['Director']})}></Route>
+            <Route path='/adminPage/addStudent' element={protectedRoute({children: <AddStudent/>, allowedRoles: ['Director']})}></Route>
         </Routes>
       </Router>
   );

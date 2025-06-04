@@ -1,0 +1,57 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.admin-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.admin-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.admin-button {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.admin-button.student {
+    background-color: #007bff;
+}
+
+.admin-button.student:hover {
+    background-color: #0069d9;
+}
+
+.admin-button.professor {
+    background-color: #28a745;
+}
+
+.admin-button.professor:hover {
+    background-color: #218838;
+}
