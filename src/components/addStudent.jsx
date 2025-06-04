@@ -1,17 +1,17 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
-import '../App.css'
+import '../styles/formStyle.css'
 
 
 function AddStudent(){
     const [nombre , setNombre] = useState('');
     const [cedula, setCedula] = useState('');
     const [correo, setCorreo] = useState('');
-    const [telefono, setTefono] = useState('');
+    const [telefono, setTelefono] = useState('');
     const[fecha, setFecha] = useState('');
     const navigate = useNavigate();
 
-    const handleStudentSumbit = async (e) => {
+    const handleStudentSubmit = async (e) => {
         e.preventDefault();
         try{
             const token = localStorage.getItem('token');
@@ -24,57 +24,59 @@ function AddStudent(){
                 console.log('Error en el fetch')
                 throw new Error('Error en el fetch')
             }
+            navigate('/adminPage');
         }catch(err){
             alert('Error en el fetch');
         }
-        navigate('/adminPage');
+
 
     };
     return (
-        <div>
-            <form onSubmit={handleStudentSumbit}>
+        <div className="form-container">
+            <h2 className="form-title">Registrar Estudiante</h2>
+            <form onSubmit={handleStudentSubmit} className="form">
                 <input
+                    className="form-input"
                     value={nombre}
                     placeholder='Nombre del estudiante'
-                    onChange={(e)=>{setNombre(e.target.value)}}
+                    onChange={(e) => setNombre(e.target.value)}
                     required
                 />
-                <br/>
                 <input
                     type='number'
+                    className="form-input"
                     value={cedula}
-                    placeholder='Cedula del estudiante'
-                    onChange={(e)=> {setCedula(e.target.value)}}
+                    placeholder='Cédula del estudiante'
+                    onChange={(e) => setCedula(e.target.value)}
                     required
                 />
-                <br/>
                 <input
+                    className="form-input"
                     value={correo}
                     placeholder='Correo del estudiante'
-                    onChange={(e)=>{setCorreo(e.target.value)}}
+                    onChange={(e) => setCorreo(e.target.value)}
                     required
-                    />
-                <br/>
+                />
                 <input
                     type='number'
+                    className="form-input"
                     value={telefono}
-                    placeholder='Telefono del estudiante'
-                    onChange={(e)=>{setTefono(e.target.value)}}
+                    placeholder='Teléfono del estudiante'
+                    onChange={(e) => setTelefono(e.target.value)}
                     required
                 />
-                <br/>
                 <input
                     type='date'
+                    className="form-input"
                     value={fecha}
-                    onChange={(e)=>{setFecha(e.target.value)}}
-                    placeholder='Fecha de nacimiento'
+                    onChange={(e) => setFecha(e.target.value)}
                     required
                 />
-                <br/>
-                <button type='submit'>Agregar estudiante</button>
+                <button type='submit' className="form-button">Agregar estudiante</button>
             </form>
         </div>
     );
+
 }
 
 export default AddStudent;
