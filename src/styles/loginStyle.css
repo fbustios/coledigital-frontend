@@ -62,3 +62,57 @@ body {
 .login-button:hover {
     background-color: #0069d9;
 }
+
+@media (max-width: 480px) { /*Celulares*/
+    .login-card{
+        padding: 20px;
+    }
+
+    .login-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .login-input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .login-button {
+        font-size:14px;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {  /*Tablets*/
+    .login-card {
+        padding: 30px;
+    }
+
+    .login-title {
+        font-size: 22px;
+    }
+
+    .login-input,
+    .login-button {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 769px) {     /*Pc*/
+    .login-card {
+        padding: 40px;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+
+    .login-input,
+    .login-button {
+        font-size: 16px;
+        padding: 14px;
+    }
+}
+

@@ -55,3 +55,49 @@ body {
 .admin-button.professor:hover {
     background-color: #218838;
 }
+
+@media (max-width: 480px) {         /*Celulares*/
+    .admin-card {
+        padding: 20px;
+    }
+
+    .admin-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .admin-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {      /*Tablets*/
+    .admin-card {
+        padding: 30px;
+    }
+
+    .admin-title {
+        font-size: 22px;
+    }
+
+    .admin-button {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+@media (min-width: 769px) {         /*Pc*/
+    .admin-card {
+        padding: 40px;
+    }
+
+    .admin-title {
+        font-size: 24px;
+    }
+
+    .admin-button {
+        font-size: 16px;
+        padding: 14px;
+    }
+}
