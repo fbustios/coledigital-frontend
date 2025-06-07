@@ -24,6 +24,18 @@ function AdminPage(){
                 >
                     Agregar Profesor
                 </button>
+                <button
+                    onClick={handleFunction('/adminPage/reset')}
+                    className="admin-button reset"
+                >
+                    Resetear año lectivo
+                </button>
+                <button
+                    onClick={handleFunction('/adminPage/sectionStudent')}
+                    className="admin-button sectionE"
+                >
+                    Asignar seccion a estudiante
+                </button>
             </div>
         </div>
     );

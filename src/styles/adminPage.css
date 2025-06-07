@@ -52,6 +52,15 @@ body {
     background-color: #28a745;
 }
 
+.admin-button.reset {
+    background-color: crimson;
+}
+
+
+.admin-button.sectionE {
+    background-color: #61dafb;
+}
+
 .admin-button.professor:hover {
     background-color: #218838;
 }
