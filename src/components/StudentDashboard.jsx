@@ -1,5 +1,7 @@
 import { useState } from "react";
 import '../styles/dashboard.css'
+import {Navigate, useNavigate} from 'react-router-dom'
+
 
 const classes = [
     { id: 1, name: "Matemáticas", description: "Álgebra y geometría" },
@@ -9,9 +11,12 @@ const classes = [
 ];
 
 export default function StudentDashboard() {
+    const navigate = useNavigate();
     const [active, setActive] = useState("home");
-
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/perro');
+    }
     return (
         <div className='container'>
 
@@ -28,7 +33,6 @@ export default function StudentDashboard() {
                 </button>
             </aside>
 
-            {/* Main */}
             <main className='main'>
                 <h1>Mis Clases</h1>
                 <div className='grid'>
@@ -36,6 +40,9 @@ export default function StudentDashboard() {
                         <div key={clase.id} className='card'>
                             <h2 className='card-title'>{clase.name}</h2>
                             <p className='card-text'>{clase.description}</p>
+                            <form onSubmit={handleSubmit}>
+                                <button className='button' type='submit'>Visitar</button>
+                            </form>
                         </div>
                     ))}
                 </div>
