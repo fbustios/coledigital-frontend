@@ -1,29 +1,41 @@
-import { useState } from "react";
+import {useState, useEffect} from "react";
 import '../styles/dashboard.css'
-import {Navigate, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 
-const classes = [
-    { id: 1, name: "Matemáticas", description: "Álgebra y geometría" },
-    { id: 2, name: "Ciencias", description: "Biología y química" },
-    { id: 3, name: "Historia", description: "Historia mundial" },
-    { id: 4, name: "Lengua", description: "Gramática y lectura" },
-];
-const getClasses = async () => {
-    const res = await fetch('http://localhost:8080/adminPage/sectionStudent',{
-
-    })
-}
 
 export default function StudentDashboard() {
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user'));
+    const id = user.id;
+    const rol = user.rol;
     const navigate = useNavigate();
-
     const [active, setActive] = useState("home");
+    const [clases, setClases] = useState([])
 
-
-    const handleSubmit = (e) => {
+        useEffect(() =>{
+            const getClasses = async () => {
+                try {
+                    const res = await fetch('http://localhost:8080/Home/Dashboard', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
+                        body: JSON.stringify({id, rol})
+                    });
+                    if(!res.ok){
+                        throw new Error('Error en el fetch');
+                    }
+                    const data = await res.json();
+                    setClases(data.clases);
+                }catch(err){
+                    alert('error al obtener todas las clases');
+                }
+            };
+            getClasses();
+        },[id, rol, token]);
+    console.log(id);
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate('/perro');
+
     }
     return (
         <div className='container'>
@@ -44,10 +56,9 @@ export default function StudentDashboard() {
             <main className='main'>
                 <h1>Mis Clases</h1>
                 <div className='grid'>
-                    {classes.map((clase) => (
+                    {clases.map((clase) => (
                         <div key={clase.id} className='card'>
-                            <h2 className='card-title'>{clase.name}</h2>
-                            <p className='card-text'>{clase.description}</p>
+                            <h2 className='card-title'>{clase.nombre}</h2>
                             <form onSubmit={handleSubmit}>
                                 <button className='button' type='submit'>Visitar</button>
                             </form>
