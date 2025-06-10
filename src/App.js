@@ -9,6 +9,7 @@ import Reset from "./components/reset"
 import SectionToStudent from './components/addSectionToStudent'
 import StudentDashboard from "./components/StudentDashboard";
 import DeleteFuncionario from './components/deleteFuncionario';
+import ProfesorClase from "./components/addProfesorClase";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/adminPage/sectionStudent' element={protectedRoute({children: <SectionToStudent/>, allowedRoles: ['Director']})}></Route>
             <Route path='/Home/Dashboard' element={protectedRoute({children: <StudentDashboard/>, allowedRoles: ['Estudiante','Profesor']})}></Route>
             <Route path='/adminPage/deleteFuncionario' element={protectedRoute({children: <DeleteFuncionario/>, allowedRoles: ['Director']})}></Route>
+            <Route path='/adminPage/asignarProfesorClase' element={protectedRoute({children: <ProfesorClase/>, allowedRoles: ['Director']})}></Route>
 
         </Routes>
       </Router>

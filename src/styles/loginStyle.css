@@ -100,7 +100,7 @@ body {
     }
 }
 
-@media (min-width: 769px) {     /*Pc*/
+@media (min-width: 769px) {
     .login-card {
         padding: 40px;
     }

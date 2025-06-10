@@ -42,6 +42,12 @@ function AdminPage(){
                 >
                     Asignar seccion a estudiante
                 </button>
+                <button
+                    onClick={handleFunction('/adminPage/asignarProfesorClase')}
+                    className="admin-button professorC"
+                >
+                    Asignar profesor a una clase
+                </button>
             </div>
         </div>
     );
