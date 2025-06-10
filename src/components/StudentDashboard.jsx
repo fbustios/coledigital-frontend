@@ -59,6 +59,7 @@ export default function StudentDashboard() {
                     {clases.map((clase) => (
                         <div key={clase.id} className='card'>
                             <h2 className='card-title'>{clase.nombre}</h2>
+                            <p className='card-text'>{clase.inicio}</p>
                             <form onSubmit={handleSubmit}>
                                 <button className='button' type='submit'>Visitar</button>
                             </form>
