@@ -9,10 +9,18 @@ const classes = [
     { id: 3, name: "Historia", description: "Historia mundial" },
     { id: 4, name: "Lengua", description: "Gramática y lectura" },
 ];
+const getClasses = async () => {
+    const res = await fetch('http://localhost:8080/adminPage/sectionStudent',{
+
+    })
+}
 
 export default function StudentDashboard() {
     const navigate = useNavigate();
+
     const [active, setActive] = useState("home");
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate('/perro');
