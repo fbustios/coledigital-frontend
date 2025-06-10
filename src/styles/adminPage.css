@@ -56,6 +56,14 @@ body {
     background-color: crimson;
 }
 
+.admin-button.deleteF {
+    background-color: #f17705;
+}
+
+.admin-button.deleteF:hover {
+    background-color: #c64d05;
+}
+
 
 .admin-button.sectionE {
     background-color: #61dafb;

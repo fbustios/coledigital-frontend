@@ -31,6 +31,12 @@ function AdminPage(){
                     Resetear año lectivo
                 </button>
                 <button
+                    onClick={handleFunction('/adminPage/deleteFuncionario')}
+                    className="admin-button deleteF"
+                >
+                    Eliminar Funcionario
+                </button>
+                <button
                     onClick={handleFunction('/adminPage/sectionStudent')}
                     className="admin-button sectionE"
                 >
