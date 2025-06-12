@@ -56,6 +56,10 @@ body {
     background-color: crimson;
 }
 
+.admin-button.reset:hover {
+    background-color: #B01030;
+}
+
 .admin-button.deleteF {
     background-color: #f17705;
 }
@@ -69,8 +73,20 @@ body {
     background-color: #61dafb;
 }
 
+.admin-button.sectionE:hover {
+    background-color: #43c0e0;
+}
+
 .admin-button.professor:hover {
     background-color: #218838;
+}
+
+.admin-button.professorC {
+    background-color: #800080;
+}
+
+.admin-button.professorC:hover {
+    background-color: #660066;
 }
 
 @media (max-width: 480px) {         /*Celulares*/
