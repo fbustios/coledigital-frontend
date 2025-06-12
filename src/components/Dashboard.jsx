@@ -4,13 +4,12 @@ import {useNavigate} from 'react-router-dom'
 
 
 
-export default function StudentDashboard() {
+export default function Dashboard() {
     const token = localStorage.getItem('token');
     const user = JSON.parse(localStorage.getItem('user'));
     const id = user.id;
     const rol = user.rol;
     const navigate = useNavigate();
-    const [active, setActive] = useState("home");
     const [clases, setClases] = useState([])
 
         useEffect(() =>{
@@ -33,24 +32,18 @@ export default function StudentDashboard() {
             getClasses();
         },[id, rol, token]);
     console.log(id);
-    const handleSubmit = async (e) => {
+    const isProfessor = rol === 'Profesor'
+    const handleSubmit = async (e,clase) => {
         e.preventDefault();
+        localStorage.setItem('clase',clase)
+        navigate('Clase')
 
     }
     return (
         <div className='container'>
 
             <aside className='sidebar'>
-                <button
-                    onClick={() => setActive("home")}
-                >
-                    🏠
-                </button>
-                <button
-                    onClick={() => setActive("profile")}
-                >
-                    👤
-                </button>
+
             </aside>
 
             <main className='main'>
@@ -60,7 +53,8 @@ export default function StudentDashboard() {
                         <div key={clase.id} className='card'>
                             <h2 className='card-title'>{clase.nombre}</h2>
                             <p className='card-text'>{clase.inicio}</p>
-                            <form onSubmit={handleSubmit}>
+                            {isProfessor ? <p className='card-text'>{clase.numero}</p> : <p></p>}
+                            <form onSubmit={(e) => handleSubmit(e,clase)}>
                                 <button className='button' type='submit'>Visitar</button>
                             </form>
                         </div>
