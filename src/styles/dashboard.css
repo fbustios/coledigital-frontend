@@ -1,47 +1,70 @@
-.container {
-    display: flex;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-}
+
 
 .sidebar {
     width: 80px;
     background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
+    height: 100vh;
+    gap: 1.5rem;
+}
+
+.sidebar a, .sidebar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar a:hover, .sidebar button:hover {
+    transform: scale(1.1);
+    color: #3498db;
 }
 
 .button {
-    background: none;
+    margin-top: 1rem;
+    background-color: #3498db;
     border: none;
-    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    color: white;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.5rem;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #2980b9;
 }
 
 .active-button {
     font-weight: bold;
 }
 
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
 .main {
     flex: 1;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding: 2rem;
+    height: 800px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
-
 .card {
     background-color: #fff;
     padding: 1rem;

@@ -31,11 +31,12 @@ export default function Dashboard() {
             };
             getClasses();
         },[id, rol, token]);
-    console.log(id);
     const isProfessor = rol === 'Profesor'
     const handleSubmit = async (e,clase) => {
         e.preventDefault();
-        localStorage.setItem('clase',clase)
+        console.log(clase.nombre,clase.id)
+        localStorage.setItem('clase_id',id)
+        localStorage.setItem('clase_materia',clase.nombre)
         navigate('Clase')
 
     }
@@ -43,7 +44,7 @@ export default function Dashboard() {
         <div className='container'>
 
             <aside className='sidebar'>
-
+                <p></p>
             </aside>
 
             <main className='main'>
@@ -52,8 +53,8 @@ export default function Dashboard() {
                     {clases.map((clase) => (
                         <div key={clase.id} className='card'>
                             <h2 className='card-title'>{clase.nombre}</h2>
-                            <p className='card-text'>{clase.inicio}</p>
-                            {isProfessor ? <p className='card-text'>{clase.numero}</p> : <p></p>}
+                            <p className='card-text'>Hora de inicio: {clase.inicio}</p>
+                            {isProfessor ? <p className='card-text'>Sección: {clase.numero}</p> : <p></p>}
                             <form onSubmit={(e) => handleSubmit(e,clase)}>
                                 <button className='button' type='submit'>Visitar</button>
                             </form>

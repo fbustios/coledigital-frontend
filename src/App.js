@@ -31,6 +31,7 @@ function App() {
             <Route path='/Home/Dashboard/Clase/Material' element={protectedRoute({children: <SemesterMaterial/>, allowedRoles: ['Estudiante','Profesor']})}></Route>
             <Route path='/Home/Dashboard/Clase/Notas' element={protectedRoute({children: <SemesterGrades/>, allowedRoles: ['Estudiante','Profesor']})}></Route>
             <Route path='/adminPage/asignarProfesorClase' element={protectedRoute({children: <ProfesorClase/>, allowedRoles: ['Director']})}></Route>
+
         </Routes>
       </Router>
   );

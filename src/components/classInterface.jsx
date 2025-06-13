@@ -4,6 +4,7 @@ import '../styles/dashboard.css'
 
 export default function ClassInterface(){
     const navigate = useNavigate();
+    const materia = localStorage.getItem('clase_materia');
     return(
         <div className='container'>
 
@@ -20,7 +21,7 @@ export default function ClassInterface(){
                 </button>
             </aside>
             <main className='main'>
-                <h1>{localStorage.getItem('clase').nombre}</h1>
+                <h1>{materia}</h1>
             </main>
         </div>
     )
