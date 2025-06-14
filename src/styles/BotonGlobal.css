@@ -1,0 +1,13 @@
+.boton-global {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+    color: inherit;
+}

@@ -1,0 +1,147 @@
+/* Título General */
+body.light .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+body.dark .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Body general */
+body.light {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+/* Contenedores principales */
+body.light .card {
+    background-color: white;
+}
+
+body.dark .card {
+    background-color: #1e1e1e;
+}
+
+/* Inputs globales */
+body.light .input {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+body.dark .input {
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+}
+
+/* Botones generales */
+body.light .button {
+    background-color: #007bff;
+    color: white;
+}
+
+body.dark .button {
+    background-color: #bb86fc;
+    color: black;
+}
+
+body.light .button:hover {
+    background-color: #0069d9;
+}
+
+body.dark .button:hover {
+    background-color: #a264e0;
+}
+
+/* Botón para cambiar modo */
+.toggle-button {
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: transparent;
+    color: inherit;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button.light {
+    background-color: #000;
+    color: white;
+}
+
+.toggle-button.dark {
+    background-color: #fff;
+    color: black;
+}
+
+/* Formularios */
+body.dark .form-container,
+body.dark .admin-card,
+body.dark .modal-container {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.light .form-container,
+body.light .admin-card,
+body.light .modal-container {
+    background-color: white;
+    color: #333;
+}
+
+/* Titulos */
+body.dark h1,
+body.dark h2,
+body.dark .form-title,
+body.dark .admin-title {
+    color: #bb86fc;
+}
+
+/* Entradas de texto */
+body.dark input,
+body.dark select,
+body.dark textarea {
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+    color: #bbb;
+}
+
+/* Botones */
+body.dark button,
+body.dark .form-button,
+
+
+body.dark button:hover,
+body.dark .form-button:hover,
+body.dark .admin-button:hover {
+    background-color: #9a6de0;
+}
+
+
+body.dark .content-box,
+body.dark .card,
+body.dark .box {
+    background-color: #2a2a2a;
+    color: white;
+}

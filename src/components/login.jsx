@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/loginStyle.css'
+import '../styles/loginStyle.css';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -16,11 +16,7 @@ function Login() {
                 body: JSON.stringify({ username, password }),
             });
 
-            if (!res.ok) {
-                console.log('xd');
-                throw new Error(res.statusText);
-
-            }
+            if (!res.ok) throw new Error(res.statusText);
 
             const data = await res.json();
             localStorage.setItem('token', data.token);

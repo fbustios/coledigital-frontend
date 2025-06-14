@@ -113,6 +113,25 @@ body {
     background-color: #218838;
 }
 
+.admin-container.light {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Modo oscuro */
+.admin-container.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.admin-container.dark .admin-card {
+    background-color: #1e1e1e;
+}
+
+.admin-container.dark .admin-title {
+    color: #bb86fc;
+}
+
 
 @media (max-width: 480px) {         /*Celulares*/
     .admin-card {
