@@ -82,12 +82,37 @@ body {
 }
 
 .admin-button.professorC {
-    background-color: #800080;
+    background-color: #AB2AED;
 }
 
 .admin-button.professorC:hover {
-    background-color: #660066;
+    background-color: #C770D8;
 }
+
+.admin-button.editarFuncionario {
+    background-color: #FF5282;
+}
+
+.admin-button.editarFuncionario:hover {
+    background-color: #F28367;
+}
+
+.admin-button.editProfesor {
+    background-color: #007bff;
+}
+
+.admin-button.editProfesor:hover {
+    background-color: #0069d9;
+}
+
+.admin-button.editEstudiante {
+    background-color: #28a745;
+}
+
+.admin-button.editEstudiante:hover {
+    background-color: #218838;
+}
+
 
 @media (max-width: 480px) {         /*Celulares*/
     .admin-card {

@@ -13,6 +13,9 @@ import ClassInterface from "./components/classInterface";
 import SemesterMaterial from "./components/semesterMaterial";
 import SemesterGrades from "./components/semesterGrades";
 import ProfesorClase from "./components/addProfesorClase";
+import EditarFuncionario from "./components/editarFuncionario";
+import EditarProfesor from './components/editarProfesor';
+import EditarEstudiante from './components/editarEstudiante';
 
 
 function App() {
@@ -31,6 +34,10 @@ function App() {
             <Route path='/Home/Dashboard/Clase/Material' element={protectedRoute({children: <SemesterMaterial/>, allowedRoles: ['Estudiante','Profesor']})}></Route>
             <Route path='/Home/Dashboard/Clase/Notas' element={protectedRoute({children: <SemesterGrades/>, allowedRoles: ['Estudiante','Profesor']})}></Route>
             <Route path='/adminPage/asignarProfesorClase' element={protectedRoute({children: <ProfesorClase/>, allowedRoles: ['Director']})}></Route>
+            <Route path="/adminPage/editarFuncionario" element={protectedRoute({ children: <EditarFuncionario />, allowedRoles: ['Director'] })}></Route>
+            <Route path='/adminPage/editarProfesor' element={protectedRoute({children: <EditarProfesor/>, allowedRoles: ['Director']})}></Route>
+            <Route path='/adminPage/editarEstudiante' element={protectedRoute({children: <EditarEstudiante/>, allowedRoles: ['Director']})}></Route>
+
 
         </Routes>
       </Router>

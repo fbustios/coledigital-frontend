@@ -48,6 +48,12 @@ function AdminPage(){
                 >
                     Asignar profesor a una clase
                 </button>
+                <button
+                    onClick={() => navigate('/adminPage/editarFuncionario')}
+                    className="admin-button editarFuncionario"
+                >
+                    Editar Funcionario
+                </button>
             </div>
         </div>
     );
