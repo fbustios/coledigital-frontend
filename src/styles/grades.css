@@ -1,0 +1,47 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notas-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.notas-tabla {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid blueviolet;
+    border-collapse: collapse;
+    background-color: #f0f8ff;
+    box-shadow: 0 0 10px rgba(137, 43, 226, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.notas-tabla thead {
+    background-color: #dcd6f7;
+}
+
+.notas-tabla th,
+.notas-tabla td {
+    border: 1px solid #999;
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.notas-tabla th {
+    font-weight: 600;
+    color: #333;
+}
+
+.notas-tabla tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.fila-total {
+    background-color: #e4dcff;
+    font-weight: bold;
+}

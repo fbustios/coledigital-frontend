@@ -12,6 +12,7 @@ export default function SemesterGrades() {
         if(user.rol === 'Profesor'){
             navigate('Estudiantes');
         } else {
+
             navigate('NotasPersonales');
         }
         localStorage.setItem('semestre',semestre);

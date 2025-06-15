@@ -19,6 +19,7 @@ import ProfesorClase from "./components/addProfesorClase";
 import EditarFuncionario from "./components/editarFuncionario";
 import EditarProfesor from './components/editarProfesor';
 import EditarEstudiante from './components/editarEstudiante';
+import GradesStudent from "./components/gradesStudent";
 
 function App() {
     return (
@@ -41,6 +42,7 @@ function App() {
                         <Route path="/adminPage/editarFuncionario" element={protectedRoute({ children: <EditarFuncionario />, allowedRoles: ['Director'] })} />
                         <Route path='/adminPage/editarProfesor' element={protectedRoute({ children: <EditarProfesor />, allowedRoles: ['Director'] })} />
                         <Route path='/adminPage/editarEstudiante' element={protectedRoute({ children: <EditarEstudiante />, allowedRoles: ['Director'] })} />
+                        <Route path='/Home/Dashboard/Clase/Notas/NotasPersonales' element={protectedRoute({ children: <GradesStudent />, allowedRoles: ['Estudiante', 'Profesor'] })} />
                     </Routes>
                 </Router>
         </ThemeProvider>
