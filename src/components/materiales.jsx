@@ -14,7 +14,7 @@ export default function Materiales() {
     useEffect(() => {
         const obtenerMateriales = async () => {
             try {
-                const res = await fetch('http://localhost:8080/Home/materialesClase', {
+                const res = await fetch('http://192.168.0.93:8080/Home/materialesClase', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

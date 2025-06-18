@@ -3,6 +3,7 @@ import { ThemeProvider } from './components/ThemeContext';
 import BotonGlobal from './components/BotonGlobal';
 import './styles/global.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import IniciarSesion from "./components/iniciarSesion";
 import Login from './components/login';
 import protectedRoute from "./components/protectedRoute";
 import AdminPage from "./components/adminPage";
@@ -29,6 +30,7 @@ function App() {
             <BotonGlobal />
                 <Router>
                     <Routes>
+                        <Route path='/' element={<IniciarSesion />} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/adminPage' element={protectedRoute({ children: <AdminPage />, allowedRoles: ['Director'] })} />
                         <Route path='/adminPage/addStudent' element={protectedRoute({ children: <AddStudent />, allowedRoles: ['Director'] })} />
