@@ -1,0 +1,87 @@
+.materiales-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+body.dark .materiales-container {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.materiales-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+body.dark .materiales-container h2 {
+    color: #bb86fc;
+}
+
+.material-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    text-align: left;
+}
+
+body.dark .material-card {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+.material-card h3 {
+    margin: 0 0 8px 0;
+    color: #007bff;
+}
+
+body.dark .material-card h3 {
+    color: #80bfff;
+}
+
+.material-card a {
+    text-decoration: none;
+    color: #333;
+    word-break: break-word;
+}
+
+body.dark .material-card a {
+    color: #ddd;
+}
+
+.boton-agregar {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+body.light .boton-agregar {
+    background-color: #28a745;
+}
+
+body.light .boton-agregar:hover {
+    background-color: #218838;
+}
+
+/* Botón en modo oscuro (morado) */
+body.dark .boton-agregar {
+    background-color: #bb86fc;
+    color: black;
+}
+
+body.dark .boton-agregar:hover {
+    background-color: #9a6de0; /* más oscuro */
+}

@@ -1,4 +1,4 @@
-/* Título General */
+/* Títulos */
 body.light .title {
     font-size: 24px;
     margin-bottom: 30px;
@@ -11,7 +11,7 @@ body.dark .title {
     color: #fff;
 }
 
-/* Body general */
+/* Fondo y texto general del body */
 body.light {
     background-color: #f0f2f5;
     color: #333;
@@ -22,13 +22,15 @@ body.dark {
     color: white;
 }
 
-/* Contenedores principales */
+/* Tarjetas (card) generales */
 body.light .card {
     background-color: white;
+    color: #333;
 }
 
 body.dark .card {
-    background-color: #1e1e1e;
+    background-color: #2a2a2a;
+    color: white;
 }
 
 /* Inputs globales */
@@ -44,19 +46,19 @@ body.dark .input {
     color: white;
 }
 
-/* Botones generales */
+/* Botones globales */
 body.light .button {
     background-color: #007bff;
     color: white;
 }
 
+body.light .button:hover {
+    background-color: #0069d9;
+}
+
 body.dark .button {
     background-color: #bb86fc;
     color: black;
-}
-
-body.light .button:hover {
-    background-color: #0069d9;
 }
 
 body.dark .button:hover {
@@ -89,7 +91,14 @@ body.dark .button:hover {
     color: black;
 }
 
-/* Formularios */
+/* Contenedores de formularios, tarjetas admin, modales */
+body.light .form-container,
+body.light .admin-card,
+body.light .modal-container {
+    background-color: white;
+    color: #333;
+}
+
 body.dark .form-container,
 body.dark .admin-card,
 body.dark .modal-container {
@@ -98,14 +107,7 @@ body.dark .modal-container {
     border: 1px solid #444;
 }
 
-body.light .form-container,
-body.light .admin-card,
-body.light .modal-container {
-    background-color: white;
-    color: #333;
-}
-
-/* Titulos */
+/* Títulos en modo oscuro */
 body.dark h1,
 body.dark h2,
 body.dark .form-title,
@@ -113,7 +115,7 @@ body.dark .admin-title {
     color: #bb86fc;
 }
 
-/* Entradas de texto */
+/* Entradas y selects */
 body.dark input,
 body.dark select,
 body.dark textarea {
@@ -127,21 +129,136 @@ body.dark textarea::placeholder {
     color: #bbb;
 }
 
-/* Botones */
+/* Botones especiales */
 body.dark button,
 body.dark .form-button,
-
-
-body.dark button:hover,
 body.dark .form-button:hover,
 body.dark .admin-button:hover {
     background-color: #9a6de0;
 }
 
-
+/* Cuadros de contenido */
 body.dark .content-box,
-body.dark .card,
 body.dark .box {
     background-color: #2a2a2a;
     color: white;
+}
+
+/* Dashboard y ClassInterface fondo */
+.container.light {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.container.dark .main {
+    background-color: transparent;
+    color: white;
+}
+
+.container.light .card {
+    background-color: white;
+    color: #333;
+}
+
+.container.dark .card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Sidebar general */
+.container .sidebar button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Sidebar claro */
+.container.light .sidebar {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container.light .sidebar button {
+    background-color: #e0e0e0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+/* Sidebar oscuro */
+.container.dark .sidebar {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.container.dark .sidebar button {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* Estilo de textos en tarjetas */
+.card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+
+.container.dark .card-text {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.container.light .card-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+.container.dark .card li {
+    color: white;
+    font-size: 0.95rem;
+}
+
+.container.light .card li {
+    font-size: 0.95rem;
+}
+
+body.light .boton-guardar-material {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+body.light .boton-guardar-material:hover {
+    background-color: #218838;
+}
+
+/* Modo oscuro: morado */
+body.dark .boton-guardar-material {
+    background-color: #bb86fc;
+    color: black;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+body.dark .boton-guardar-material:hover {
+    background-color: #9a6de0;
 }

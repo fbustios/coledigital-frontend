@@ -1,5 +1,3 @@
-
-
 .sidebar {
     width: 80px;
     background-color: #fff;
@@ -12,7 +10,8 @@
     gap: 1.5rem;
 }
 
-.sidebar a, .sidebar button {
+.sidebar a,
+.sidebar button {
     background: none;
     border: none;
     cursor: pointer;
@@ -21,10 +20,12 @@
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.sidebar a:hover, .sidebar button:hover {
+.sidebar a:hover,
+.sidebar button:hover {
     transform: scale(1.1);
     color: #3498db;
 }
+
 
 .button {
     margin-top: 1rem;
@@ -45,6 +46,7 @@
     font-weight: bold;
 }
 
+
 .container {
     display: flex;
     min-height: 100vh;
@@ -60,11 +62,13 @@
     max-height: 100vh;
 }
 
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
 }
+
 .card {
     background-color: #fff;
     padding: 1rem;
@@ -85,4 +89,28 @@
 .card-text {
     color: #555;
     font-size: 0.9rem;
+}
+
+
+.container.light .card-text,
+.container.dark .card-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.container.dark .card-text {
+    color: white;
+}
+
+.container.light .card-text {
+    color: #555;
+}
+
+.container.dark .card li {
+    color: white;
+    font-size: 0.95rem;
+}
+
+.container.light .card li {
+    font-size: 0.95rem;
 }

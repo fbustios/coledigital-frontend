@@ -1,10 +1,10 @@
-import {useState, useEffect} from "react";
-import '../styles/dashboard.css'
-import {useNavigate} from 'react-router-dom'
-
-
+import { useState, useEffect, useContext } from "react";
+import { ThemeContext } from '../components/ThemeContext';
+import { useNavigate } from 'react-router-dom';
+import '../styles/dashboard.css';
 
 export default function Dashboard() {
+    const { darkMode } = useContext(ThemeContext);
     const token = localStorage.getItem('token');
     const user = JSON.parse(localStorage.getItem('user'));
     const id = user.id;
@@ -23,13 +23,11 @@ export default function Dashboard() {
                     },
                     body: JSON.stringify({ id, rol })
                 });
-                if (!res.ok) {
-                    throw new Error('Error en el fetch');
-                }
+                if (!res.ok) throw new Error('Error en el fetch');
                 const data = await res.json();
                 setClases(data.clases);
             } catch (err) {
-                alert('Error al obtener todas las clases');
+                alert('Error al obtener clases');
             }
         };
         getClasses();
@@ -37,7 +35,6 @@ export default function Dashboard() {
 
     const isProfessor = rol === 'Profesor';
 
-    // 🔄 Agrupar clases por ID
     const clasesAgrupadas = Object.values(clases.reduce((acc, clase) => {
         if (!acc[clase.clase_id]) {
             acc[clase.clase_id] = {
@@ -63,11 +60,8 @@ export default function Dashboard() {
     };
 
     return (
-        <div className='container'>
-            <aside className='sidebar'>
-                <p></p>
-            </aside>
-
+        <div className={`container ${darkMode ? 'dark' : 'light'}`}>
+            <aside className='sidebar'><p></p></aside>
             <main className='main'>
                 <h1>Mis Clases</h1>
                 <div className='grid'>

@@ -20,6 +20,8 @@ import EditarFuncionario from "./components/editarFuncionario";
 import EditarProfesor from './components/editarProfesor';
 import EditarEstudiante from './components/editarEstudiante';
 import GradesStudent from "./components/gradesStudent";
+import Materiales from "./components/materiales";
+import AgregarMaterial from "./components/agregarMaterial";
 
 function App() {
     return (
@@ -43,6 +45,8 @@ function App() {
                         <Route path='/adminPage/editarProfesor' element={protectedRoute({ children: <EditarProfesor />, allowedRoles: ['Director'] })} />
                         <Route path='/adminPage/editarEstudiante' element={protectedRoute({ children: <EditarEstudiante />, allowedRoles: ['Director'] })} />
                         <Route path='/Home/Dashboard/Clase/Notas/NotasPersonales' element={protectedRoute({ children: <GradesStudent />, allowedRoles: ['Estudiante', 'Profesor'] })} />
+                        <Route path='/Home/Dashboard/Clase/Material/links' element={protectedRoute({ children: <Materiales />, allowedRoles: ['Estudiante', 'Profesor'] })} />
+                        <Route path='/Home/Dashboard/Clase/Material/agregarMaterial' element={protectedRoute({ children: <AgregarMaterial />, allowedRoles: ['Estudiante', 'Profesor'] })} />
                     </Routes>
                 </Router>
         </ThemeProvider>
