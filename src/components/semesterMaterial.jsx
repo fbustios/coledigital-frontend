@@ -16,12 +16,12 @@ export default function SemesterMaterial() {
     return (
         <div className={`container ${darkMode ? 'dark' : 'light'}`}>
             <div className="card" onClick={(e) => handleClick(e, 1)}>
-                <img src="/grades.jpg" alt="I Semestre" />
+                <img src="/materiales.jpg" alt="I Semestre" />
                 <h2>I Semestre</h2>
             </div>
 
             <div className="card" onClick={(e) => handleClick(e, 2)}>
-                <img src="/grades.jpg" alt="II Semestre" />
+                <img src="/materiales.jpg" alt="II Semestre" />
                 <h2>II Semestre</h2>
             </div>
         </div>
