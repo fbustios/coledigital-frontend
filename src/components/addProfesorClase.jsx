@@ -9,7 +9,7 @@ function ProfesorClase() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:8080/adminPage/asignarProfesorClase', {
+            const res = await fetch('http://192.168.0.93:8080/adminPage/asignarProfesorClase', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
                 body: JSON.stringify({ cedula, clase_id }),

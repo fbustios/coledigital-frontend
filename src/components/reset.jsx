@@ -8,7 +8,7 @@ function Reset(){
             e.preventDefault();
             const token = localStorage.getItem('token');
             try{
-                const res = await fetch('http://localhost:8080/adminPage/reset',{
+                const res = await fetch('http://192.168.0.93:8080/adminPage/reset',{
                     method: 'DELETE',
                     headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
                 });
