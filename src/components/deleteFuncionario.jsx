@@ -18,7 +18,7 @@ function DeleteFuncionario(){
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://192.168.0.93:8080/adminPage/deleteFuncionario', {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/deleteFuncionario`, {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
                 body: JSON.stringify({cedula}),

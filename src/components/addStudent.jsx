@@ -15,7 +15,8 @@ function AddStudent(){
         e.preventDefault();
         try{
             const token = localStorage.getItem('token');
-            const res = await fetch('http://192.168.0.93:8080/adminPage/addStudent/', {
+            console.log(process.env.REACT_APP_BACKEND_URL);  // para probar
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/addStudent/`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
                 body: JSON.stringify({nombre, cedula, correo,telefono,fecha}),

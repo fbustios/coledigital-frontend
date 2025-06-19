@@ -10,7 +10,7 @@ function SectionToStudent(){
         e.preventDefault();
         if(seccion[1] === '-' && seccion[0] && seccion[2]){
             try {
-                const res = await fetch('http://192.168.0.93:8080/adminPage/sectionStudent', {
+                const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/sectionStudent`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
                     body: JSON.stringify({cedula, seccion}),

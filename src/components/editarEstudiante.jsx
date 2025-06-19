@@ -12,7 +12,7 @@ function EditarEstudiante() {
         e.preventDefault();
 
         try {
-            const res = await fetch('http://192.168.0.93:8080/adminPage/editarEstudiante', {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/editarEstudiante`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

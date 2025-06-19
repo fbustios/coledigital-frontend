@@ -12,7 +12,7 @@ function EditarProfesor() {
         e.preventDefault();
 
         try {
-            const res = await fetch('http://192.168.0.93:8080/adminPage/editarProfesor', {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/editarProfesor`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

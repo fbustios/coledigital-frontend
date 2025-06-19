@@ -16,7 +16,7 @@ export default function AgregarMaterial() {
         e.preventDefault();
 
         try {
-            const res = await fetch('http://192.168.0.93:8080/Home/agregarMaterial', {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Home/agregarMaterial`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ export default function Dashboard() {
     useEffect(() => {
         const getClasses = async () => {
             try {
-                const res = await fetch('http://192.168.0.93:8080/Home/Dashboard', {
+                const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Home/Dashboard`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
