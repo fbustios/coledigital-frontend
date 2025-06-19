@@ -173,4 +173,28 @@
     font-size: 1.4rem;
 }
 
+.sidebar-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 0.85rem;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-button:hover {
+    transform: scale(1.1);
+    color: #3498db;
+}
+
+.sidebar-button .icono {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+
 
