@@ -1,0 +1,20 @@
+.ver-horario-container {
+    padding: 2rem;
+}
+
+.horario-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.horario-table th,
+.horario-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.horario-table th {
+    background-color: #f0f0f0;
+}

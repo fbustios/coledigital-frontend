@@ -2,6 +2,8 @@ import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from '../components/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import '../styles/dashboard.css';
+import { FaCalendarAlt as CalendarIcon } from 'react-icons/fa';
+
 
 export default function Dashboard() {
     const { darkMode } = useContext(ThemeContext);
@@ -26,10 +28,16 @@ export default function Dashboard() {
                 if (!res.ok) throw new Error('Error en el fetch');
                 const data = await res.json();
                 setClases(data.clases);
+                if (data.clases.length > 0) {
+                    const claseEjemplo = data.clases[0];
+                    localStorage.setItem('seccion', claseEjemplo.seccion);
+                    console.log(claseEjemplo.seccion)
+                }
             } catch (err) {
                 alert('Error al obtener clases');
             }
         };
+
         getClasses();
     }, [id, rol, token]);
 
@@ -61,7 +69,15 @@ export default function Dashboard() {
 
     return (
         <div className={`container ${darkMode ? 'dark' : 'light'}`}>
-            <aside className='sidebar'><p></p></aside>
+            <aside className='sidebar'>
+                <button
+                    className="sidebar-button ver-horario"
+                    onClick={() => navigate('/Home/Dashboard/VerHorario')}
+                >
+                    <CalendarIcon className="icono" />
+                    <span>Ver Horario</span>
+                </button>
+            </aside>
             <main className='main'>
                 <h1>Mis Clases</h1>
                 <div className='grid'>
