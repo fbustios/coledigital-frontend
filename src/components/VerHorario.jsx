@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react';
 import '../styles/verHorario.css';
 
 // Importá las imágenes
-import horario1 from '../assets/horarios/horario_general_1.png';
-import horario2 from '../assets/horarios/horario_general_2.png';
-import horario3 from '../assets/horarios/horario_general_3.png';
-import horario4 from '../assets/horarios/horario_general_4.png';
-import horario5 from '../assets/horarios/horario_general_5.png';
-import horario6 from '../assets/horarios/horario_general_6.png';
+//import horario1 from '../assets/horarios/horario_general_1.png';
+//import horario2 from '../assets/horarios/horario_general_2.png';
+//import horario3 from '../assets/horarios/horario_general_3.png';
+//import horario4 from '../assets/horarios/horario_general_4.png';
+//import horario5 from '../assets/horarios/horario_general_5.png';
+//import horario6 from '../assets/horarios/horario_general_6.png';
 
 // Diccionario de imágenes por número de sección (final del "8-1", "10-4", etc.)
+/*
 const imagenesPorNumero = {
     1: horario1,
     2: horario2,
@@ -71,3 +72,4 @@ export default function VerHorario() {
         </div>
     );
 }
+*/

@@ -13,7 +13,7 @@ export default function ClassInterface() {
     const { darkMode } = useContext(ThemeContext);
     const navigate = useNavigate();
     const materia = localStorage.getItem('clase_materia');
-    // const claseId = localStorage.getItem('clase_id');
+    //const claseId = localStorage.getItem('clase_id');
 
     const handleGenerarReporte = async () => {
         const token = localStorage.getItem('token');

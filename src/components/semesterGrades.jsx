@@ -11,6 +11,7 @@ export default function SemesterGrades() {
     const handleClick = (e, semestre) => {
         e.preventDefault();
         localStorage.setItem('semestre', semestre);
+        localStorage.setItem('id',user.id)
         if (user.rol === 'Profesor') {
             navigate('Estudiantes');
         } else {

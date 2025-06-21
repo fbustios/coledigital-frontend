@@ -1,14 +1,38 @@
 import '../styles/grades.css';
+import {useState} from "react";
+import{useEffect} from "react";
 
 function GradesStudent() {
-    const evaluaciones = [
-        { nombre: 'I Examen', nota: '-%', valor: '35%' },
-        { nombre: 'II Examen', nota: '-%', valor: '35%' },
-        { nombre: 'I Actividad en clase', nota: '-%', valor: '10%' },
-        { nombre: 'II Actividad en clase', nota: '-%', valor: '10%' },
-        { nombre: 'III Actividad en clase', nota: '-%', valor: '10%' },
-    ];
-    //const data = fetch()
+    const user = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem('token');
+    const id = user.id;
+    const isProfessor = user.rol === 'Profesor';
+    const [evaluaciones,setEvaluaciones] = useState([])
+    const claseId = localStorage.getItem('clase_id')
+    const semestreId = localStorage.getItem('semestre');
+
+
+    useEffect(() =>{
+        async function getEvaluaciones(){
+            try {
+                const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Home/Dashboard/Clase/Notas/NotasPersonales`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'authorization': 'Bearer ' + token
+                    },
+                    body: JSON.stringify({id, claseId, semestreId})
+                })
+                if (!res.ok) throw new Error('Error al obtener las evaluaciones')
+                const data = await res.json();
+                console.log(data.evaluaciones.length)
+                setEvaluaciones(data.evaluaciones);
+            }catch(e){
+                alert('Aún no hay notas disponibles')
+            }
+        }
+        getEvaluaciones();
+    },[id,claseId,semestreId,token]);
     return (
         <div className="notas-wrapper">
             <table className="notas-tabla">
@@ -24,7 +48,7 @@ function GradesStudent() {
                     <tr key={index}>
                         <td>{evalu.nombre}</td>
                         <td>{evalu.nota}</td>
-                        <td>{evalu.valor}</td>
+                        <td>{evalu.porcentaje}</td>
                     </tr>
                 ))}
                 <tr className="fila-total">
