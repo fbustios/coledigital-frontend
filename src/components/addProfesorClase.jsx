@@ -9,7 +9,7 @@ function ProfesorClase() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/addProfessor`, {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/asignarProfesorClase`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
                 body: JSON.stringify({ cedula, clase_id }),

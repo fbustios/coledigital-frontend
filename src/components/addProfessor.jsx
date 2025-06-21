@@ -15,7 +15,7 @@ function AddProfessor(){
         e.preventDefault();
         try{
             const token = localStorage.getItem('token');
-            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/asignarProfesorClase`, {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/adminPage/addProfessor`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'authorization': 'Bearer ' + token},
                 body: JSON.stringify({nombre, cedula, correo,telefono,fecha}),
