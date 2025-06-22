@@ -1,12 +1,12 @@
 import '../styles/grades.css';
-import {useState} from "react";
-import{useEffect} from "react";
+import {useState, useEffect} from "react";
+
 
 function GradesStudent() {
     const user = JSON.parse(localStorage.getItem('user'));
     const token = localStorage.getItem('token');
     const id = user.id;
-    const isProfessor = user.rol === 'Profesor';
+    //const isProfessor = user.rol === 'Profesor';
     const [evaluaciones,setEvaluaciones] = useState([])
     const claseId = localStorage.getItem('clase_id')
     const semestreId = localStorage.getItem('semestre');
@@ -25,7 +25,6 @@ function GradesStudent() {
                 })
                 if (!res.ok) throw new Error('Error al obtener las evaluaciones')
                 const data = await res.json();
-                console.log(data.evaluaciones.length)
                 setEvaluaciones(data.evaluaciones);
             }catch(e){
                 alert('Aún no hay notas disponibles')

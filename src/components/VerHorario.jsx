@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import '../styles/verHorario.css';
+//import { useEffect, useState } from 'react';
+//import '../styles/verHorario.css';
 
 // Importá las imágenes
 //import horario1 from '../assets/horarios/horario_general_1.png';
