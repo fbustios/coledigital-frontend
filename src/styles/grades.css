@@ -1,5 +1,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    color: #222 !important;
+    margin: 0;
+    padding: 0;
+}
+
+.notas-tabla th,
+.notas-tabla td {
+    color: #222 !important;
 }
 
 .notas-wrapper {
@@ -11,37 +20,68 @@ body {
 
 .notas-tabla {
     width: 100%;
-    max-width: 600px;
-    border: 2px solid blueviolet;
+    max-width: 700px;
+    border: 1.5px solid #a77ff0;
     border-collapse: collapse;
-    background-color: #f0f8ff;
-    box-shadow: 0 0 10px rgba(137, 43, 226, 0.2);
-    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(137, 43, 226, 0.1);
+    border-radius: 12px;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .notas-tabla thead {
-    background-color: #dcd6f7;
+    background-color: #ede7f6;
 }
 
 .notas-tabla th,
 .notas-tabla td {
-    border: 1px solid #999;
-    padding: 14px;
+    border: 1px solid #ddd;
+    padding: 14px 12px;
     text-align: center;
     font-size: 15px;
 }
 
 .notas-tabla th {
     font-weight: 600;
-    color: #333;
+    color: #4b3869;
+    background-color: #f3e8ff;
 }
 
 .notas-tabla tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
+.notas-tabla tbody tr:hover {
+    background-color: #f1f1ff;
+    transition: background-color 0.2s ease;
+}
+
 .fila-total {
-    background-color: #e4dcff;
+    background-color: #ede2ff;
     font-weight: bold;
+    color: #3d2b5f;
+}
+
+.btn-pequeno {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    background-color: #5c45cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-pequeno:hover {
+    background-color: #705ee6;
+    box-shadow: 0 0 6px rgba(92, 69, 204, 0.4);
+    transform: scale(1.05);
+}
+
+.btn-pequeno:active {
+    transform: scale(0.95);
+    background-color: #4833aa;
 }
