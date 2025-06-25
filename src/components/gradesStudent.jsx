@@ -36,7 +36,7 @@ function GradesStudent() {
     const handleEdit = async (e, notaId) => {
         let notaNueva = e.target.value;
 
-        if (notaNueva === '') {
+        if (notaNueva === '' || notaNueva > 100) {
 
             setEvaluaciones(prev =>
                 prev.map(ev => ev.id === notaId ? { ...ev, nota: '' } : ev)
