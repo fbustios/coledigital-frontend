@@ -3,9 +3,9 @@ import {useState, useEffect} from "react";
 
 
 function GradesStudent() {
-    const user = JSON.parse(localStorage.getItem('user'));
+    //const user = JSON.parse(localStorage.getItem('user'));
     const token = localStorage.getItem('token');
-    const id = user.id;
+    const id = localStorage.getItem('id')
     //const isProfessor = user.rol === 'Profesor';
     const [evaluaciones,setEvaluaciones] = useState([])
     const claseId = localStorage.getItem('clase_id')

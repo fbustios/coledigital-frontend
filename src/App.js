@@ -23,6 +23,7 @@ import EditarEstudiante from './components/editarEstudiante';
 import GradesStudent from "./components/gradesStudent";
 import Materiales from "./components/materiales";
 import AgregarMaterial from "./components/agregarMaterial";
+import ListStudents from "./components/listStudents";
 //import VerHorario from './components/VerHorario';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
                         <Route path='/Home/Dashboard/Clase/Material/links' element={protectedRoute({ children: <Materiales />, allowedRoles: ['Estudiante', 'Profesor'] })} />
                         <Route path='/Home/Dashboard/Clase/Material/agregarMaterial' element={protectedRoute({ children: <AgregarMaterial />, allowedRoles: ['Estudiante', 'Profesor'] })} />
                         {/*<Route path='/Home/Dashboard/VerHorario' element={protectedRoute({ children: <VerHorario />, allowedRoles: ['Estudiante'] })} />*/}
+                        <Route path='/Home/Dashboard/Clase/Notas/Estudiantes' element={protectedRoute({ children: <ListStudents />, allowedRoles: ['Profesor'] })} />
                     </Routes>
                 </Router>
         </ThemeProvider>
